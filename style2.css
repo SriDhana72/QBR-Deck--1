@@ -9,7 +9,7 @@ body {
 
 /* Main wrapper for the newsletter style content */
 .main-page-wrapper, .second-page-wrapper, .third-page-wrapper { /* Apply to all page wrappers */
-    max-width: 740px; /* Reduced overall width */
+    max-width: 800px; /* Reduced overall width */
     margin: 1.5rem auto; /* Center the content on the page with vertical margin */
     padding: 1.8rem; /* Reduced padding inside the main wrapper */
     background-color: #ffffff; /* White background for the main content area */
