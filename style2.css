@@ -15,6 +15,7 @@ body {
     background-color: #ffffff; /* White background for the main content area */
     border-radius: 10px; /* Slightly less rounded */
     box-shadow: 0 3px 20px rgba(0, 0, 0, 0.07); /* Slightly softer shadow */
+    position: relative; /* Needed for positioning the print button relative to this container */
 }
 
 /* Header section containing company name and QBR details */
@@ -344,12 +345,6 @@ body {
 .second-page-content, .third-page-content {
     margin-top: 3rem; /* Reduced margin */
 }
-
-/* Removed specific second/third page header styles as they'll use .header-section */
-/* .second-page-header-left, .third-page-header-left { ... } */
-/* .second-page-qbr-right-container, .third-page-qbr-right-container { ... } */
-/* .second-page-qbr-right, .third-page-qbr-right { ... } */
-/* .second-page-qbr-date, .third-page-qbr-date { ... } */
 
 .second-page-content .content-heading, .third-page-content .content-heading {
     font-size: 1.3rem; /* Reduced font size */
@@ -972,4 +967,15 @@ body {
     text-align: right;
     width: 100%;
     max-width: 180px; /* Reduced max-width */
+}
+
+/* Styles for printing */
+.no-print {
+    /* This class is used by the script to hide the button during PDF generation */
+}
+.print-button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
 }

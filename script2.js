@@ -1,64 +1,84 @@
-document.addEventListener('DOMContentLoaded', () => {
-    // Function to wrap text content for word-by-word animation
-    const wrapWords = (element) => {
-        const initialTextSpan = element.querySelector('.initial-text');
-        if (!initialTextSpan) return; // Only process if .initial-text exists
+        // Word-by-word animation script
+        document.addEventListener('DOMContentLoaded', () => {
+            const wrapWords = (element) => {
+                const initialTextSpan = element.querySelector('.initial-text');
+                if (!initialTextSpan) return;
+                const text = initialTextSpan.innerHTML;
+                let wrappedText = '';
+                const parts = text.split(/(<[^>]+>|\s+)/);
+                parts.forEach((part) => {
+                    if (part.startsWith('<') && part.endsWith('>')) {
+                        wrappedText += part;
+                    } else if (part.trim() === '') {
+                        wrappedText += part;
+                    } else {
+                        wrappedText += `<span style="opacity:0;">${part}</span>`;
+                    }
+                });
+                element.innerHTML = wrappedText;
+            };
 
-        const text = initialTextSpan.innerHTML;
-        let wrappedText = '';
-        // Split by space, but keep HTML tags intact for strong elements etc.
-        const parts = text.split(/(<[^>]+>|\s+)/);
+            const animateWords = (element) => {
+                const words = element.querySelectorAll('span');
+                words.forEach((word, index) => {
+                    setTimeout(() => {
+                        word.style.opacity = '1';
+                    }, index * 20);
+                });
+            };
 
-        parts.forEach((part) => {
-            if (part.startsWith('<') && part.endsWith('>')) {
-                // It's an HTML tag, add it directly without wrapping
-                wrappedText += part;
-            } else if (part.trim() === '') {
-                // It's just whitespace, add it directly
-                wrappedText += part;
-            } else {
-                // It's a word, wrap it in a span
-                wrappedText += `<span style="opacity:0;">${part}</span>`;
-            }
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.1
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        if (entry.target.classList.contains('word-by-word')) {
+                            animateWords(entry.target);
+                        }
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            const wordByWordTargets = document.querySelectorAll('.word-by-word');
+            wordByWordTargets.forEach(target => {
+                wrapWords(target);
+                observer.observe(target);
+            });
         });
-        element.innerHTML = wrappedText;
-    };
 
-    // Function to animate words one by one
-    const animateWords = (element) => {
-        const words = element.querySelectorAll('span');
-        words.forEach((word, index) => {
-            setTimeout(() => {
-                word.style.opacity = '1';
-            }, index * 20); // Even faster delay (20ms per word)
-        });
-    };
+        // PDF Download Function
+        function downloadPDF() {
+            // Get the container for the button which will be hidden during print
+            const buttonContainer = document.querySelector('.print-button-container');
+            const elementToPrint = document.getElementById('content-to-print');
 
-    // Setup Intersection Observer
-    const observerOptions = {
-        root: null, // viewport
-        rootMargin: '0px',
-        threshold: 0.1 // Trigger when 10% of the element is visible
-    };
+            // Temporarily hide the button container
+            buttonContainer.style.display = 'none';
 
-    const observer = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                // For word-by-word paragraphs
-                if (entry.target.classList.contains('word-by-word')) {
-                    animateWords(entry.target);
-                }
-                // Stop observing once animated
-                observer.unobserve(entry.target);
-            }
-        });
-    }, observerOptions);
+            const options = {
+                margin: 0.5,
+                filename: 'Global_Innovations_QBR_Q2_2025.pdf',
+                image: { type: 'jpeg', quality: 0.98 },
+                html2canvas: { scale: 2, useCORS: true, letterRendering: true },
+                jsPDF: { unit: 'in', format: 'a4', orientation: 'portrait' },
+                // This is key for creating proper page breaks between your sections
+                pagebreak: { mode: 'css', before: ['.second-page-wrapper', '.third-page-wrapper'] }
+            };
 
-    // Prepare word-by-word elements BEFORE observing them
-    const wordByWordTargets = document.querySelectorAll('.word-by-word');
-    wordByWordTargets.forEach(target => {
-        wrapWords(target);
-        // Observe these elements
-        observer.observe(target);
-    });
-});
+            // Use html2pdf to generate the PDF
+            html2pdf().from(elementToPrint).set(options).save()
+                .then(() => {
+                    // Show the button again after the PDF has been saved
+                    buttonContainer.style.display = 'flex';
+                })
+                .catch(err => {
+                    console.error("Error generating PDF:", err);
+                    // Ensure the button is shown again even if there's an error
+                    buttonContainer.style.display = 'flex';
+                });
+        }

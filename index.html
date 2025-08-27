@@ -12,479 +12,491 @@
     <link rel="stylesheet" href="style2.css">
 </head>
 <body>
-    <div class="main-page-wrapper">
-        <div class="header-section">
-            <!-- Account Name (Left Top) -->
-            <div class="account-name-left">Global Innovations Inc.</div>
-
-            <!-- Quarterly Business Review Container (Right Top) -->
-            <div class="qbr-container-right">
-                <div class="qbr-heading">Quarterly Business Review</div>
-                <div class="qbr-subtext">Q2 2025</div>
-            </div>
+    <!-- Main content container that will be targeted for PDF generation -->
+    <div id="content-to-print">
+        <!-- Download as PDF Button Container at the top -->
+        <div class="print-button-container">
+            <button id="download-button" onclick="downloadPDF()" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-5 rounded-full shadow-lg flex items-center transition duration-300 ease-in-out transform hover:scale-105">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path>
+                </svg>
+                Download as PDF
+            </button>
         </div>
 
-        <!-- New Account Details Box -->
-        <div class="account-details-box">
-            <div class="header-row">
-                <div class="left-details">
-                    <div class="merchant-account-line">
-                        <span class="label">Customer Account:</span> <span class="merchant-account-value">Zoho Solutions Pvt. Ltd</span>
-                    </div>
-                    <div class="light-detail-line"><span class="label">ZUID:</span>281377</div>
-                    <div class="light-detail-line"><span class="label">Business Category:</span> E-commerce</div>
-                </div>
-                <div> <!-- This div now holds both right-aligned date fields -->
-                    <div class="report-period">
-                        Report Period: Apr 1 - Jun 30, 2025
-                    </div>
-                    <div class="generated-on">
-                        Generated on: Jul 10, 2025
-                    </div>
-                </div>
-            </div>
-        </div>
+        <div class="main-page-wrapper">
+            <div class="header-section">
+                <!-- Account Name (Left Top) -->
+                <div class="account-name-left">Global Innovations Inc.</div>
 
-        <!-- Executive Summary Title Card -->
-        <h2 class="executive-summary-heading">Executive Summary</h2>
-        <p class="executive-summary-content word-by-word">
-            <span class="initial-text">Your organization achieved steady growth this quarter, with a <strong class="text-blue-700">+6.8% increase in transaction volume</strong> and <strong class="text-blue-700">18.2% increase in revenue</strong> compared to Q1 2025. Zoho CRM and Zoho Books remain the top drivers of value, accounting for 72% of total activity. There’s a strong opportunity to expand adoption of Zoho Projects and Zoho Desk to further boost collaboration, service quality, and overall ROI.</span>
-        </p>
-
-        <!-- Metrics Cards Container -->
-        <div class="metrics-cards-container">
-            <!-- Transaction Amount Card -->
-            <div class="metric-card">
-                <div class="title">Transaction Amount</div>
-                <div class="value"> $1.24 M</div>
-                <div class="change">+16.4% vs Q1</div>
-            </div>
-
-            <!-- Success Rate Card -->
-            <div class="metric-card">
-                <div class="title">Service Usage(avg) %</div>
-                <div class="value">40.2%</div>
-                <div class="change">+1.8% vs Q1</div>
-            </div>
-
-            <!-- Total Subscriptions Card -->
-            <div class="metric-card">
-                <div class="title">Total Subscriptions</div>
-                <div class="value">28,456</div>
-                <div class="change">+12.7% vs Q1</div>
-            </div>
-        </div>
-
-        <!-- Payment Performance Heading -->
-        <h2 class="payment-performance-heading">Service Usage</h2>
-
-        <!-- Payment Performance Components Container -->
-        <div class="payment-performance-components">
-            <!-- Monthly Transaction Volume Card -->
-            <div class="performance-card">
-                <div class="card-title">Quarterly Average Usage</div>
-                <div class="monthly-volume-grid">
-                    <div>
-                        <div class="month">Q1, 2025</div>
-                        <div class="volume">38%</div>
-                    </div>
-                    <div>
-                        <div class="month">Q2, 2025</div>
-                        <div class="volume">45%</div>
-                    </div>
-                    <div>
-                        <div class="month">Q3, 2025</div>
-                        <div class="volume">40%</div>
-                    </div>
+                <!-- Quarterly Business Review Container (Right Top) -->
+                <div class="qbr-container-right">
+                    <div class="qbr-heading">Quarterly Business Review</div>
+                    <div class="qbr-subtext">Q2 2025</div>
                 </div>
             </div>
 
-            <!-- Payment Method Distribution Card -->
-            <div class="performance-card">
-                <div class="card-title">Module Usage Distribution</div>
-                <div class="payment-methods-list">
-                    <div class="payment-method-item">
-                        <div class="label-percentage-row">
-                            <span class="method-name">Zoho CRM </span>
-                            <span class="percentage">45%</span>
+            <!-- New Account Details Box -->
+            <div class="account-details-box">
+                <div class="header-row">
+                    <div class="left-details">
+                        <div class="merchant-account-line">
+                            <span class="label">Customer Account:</span> <span class="merchant-account-value">Zoho Solutions Pvt. Ltd</span>
                         </div>
-                        <div class="progress-bar-container">
-                            <div class="progress-bar green" style="width: 45%;"></div>
-                        </div>
+                        <div class="light-detail-line"><span class="label">ZUID:</span>281377</div>
+                        <div class="light-detail-line"><span class="label">Business Category:</span> E-commerce</div>
                     </div>
-                    <div class="payment-method-item">
-                        <div class="label-percentage-row">
-                            <span class="method-name">Zoho Books</span>
-                            <span class="percentage">27%</span>
+                    <div> <!-- This div now holds both right-aligned date fields -->
+                        <div class="report-period">
+                            Report Period: Apr 1 - Jun 30, 2025
                         </div>
-                        <div class="progress-bar-container">
-                            <div class="progress-bar blue" style="width: 27%;"></div>
-                        </div>
-                    </div>
-                    <div class="payment-method-item">
-                        <div class="label-percentage-row">
-                            <span class="method-name">Zoho Projects</span>
-                            <span class="percentage">15%</span>
-                        </div>
-                        <div class="progress-bar-container">
-                            <div class="progress-bar purple" style="width: 15%;"></div>
-                        </div>
-                    </div>
-                    <div class="payment-method-item">
-                        <div class="label-percentage-row">
-                            <span class="method-name">Zoho Desk</span>
-                            <span class="percentage">8%</span>
-                        </div>
-                        <div class="progress-bar-container">
-                            <div class="progress-bar yellow" style="width: 8%;"></div>
-                        </div>
-                    </div>
-                    <div class="payment-method-item">
-                        <div class="label-percentage-row">
-                            <span class="method-name">Other Modules </span>
-                            <span class="percentage">5%</span>
-                        </div>
-                        <div class="progress-bar-container">
-                            <div class="progress-bar red" style="width: 5%;"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Key Performance Insights Card -->
-        <div class="key-performance-card">
-            <div class="card-title">Recommended Next Steps for Maximum Benefit</div>
-            <ul>
-                <li><strong>Expand Access –</strong> Ensure all relevant teams are set up to use the full Zoho suite effectively</li>
-                <li><strong>Encourage Adoption –</strong> Run short, focused sessions to make Zoho Projects and Desk easy and beneficial for daily work.</li>
-                <li><strong>Streamline Operations –</strong> Review workflows to eliminate delays and make processes more efficient.</li>
-                <li><strong>Automate Smartly –</strong> Use Zoho Flow and CRM automation to reduce manual work and free up team time</li>
-                <li><strong>Track & Recognize Success –</strong> Monitor monthly adoption and highlight teams leading the way</li>
-            </ul>
-        </div>        
-    </div>
-
-    <!-- START OF SECOND PAGE -->
-    <div class="second-page-wrapper">
-        <div class="header-section">
-            <div class="account-name-left">Global Innovations Inc.</div>
-            <div class="qbr-container-right">
-                <div class="qbr-heading">Quarterly Business Review</div>
-                <div class="qbr-subtext">Q2 2025</div>
-            </div>
-        </div>
-        <div class="second-page-content">
-            <h3 class="content-heading">Support Health</h3>
-            <div class="support-health-cards-container">
-                <!-- Total Support Tickets Card -->
-                <div class="support-health-card">
-                    <div class="title">Total Support Tickets</div>
-                    <div class="value">24</div>
-                    <div class="change negative">-18% vs Q1</div>
-                </div>
-
-                <!-- Avg. Resolution Time Card -->
-                <div class="support-health-card">
-                    <div class="title">Avg. Resolution Time</div>
-                    <div class="value">4.2 hrs</div>
-                    <div class="change negative">-1.8 hrs vs Q1</div>
-                </div>
-
-                <!-- CSAT Score Card -->
-                <div class="support-health-card">
-                    <div class="title">CSAT Score</div>
-                    <div class="value">4.8/5</div>
-                    <div class="change">+0.3 vs Q1</div>
-                </div>
-            </div>
-
-            <!-- Support Ticket Categories Card -->
-            <div class="support-categories-card">
-                <div class="card-title">Support Ticket Categories</div>
-                <div class="categories-list">
-                    <div class="category-item">
-                        <div class="category-header">
-                            <span class="category-name">Payment Gateway Issues</span>
-                            <span class="category-percentage">42%</span>
-                        </div>
-                        <div class="progress-bar-container">
-                            <div class="progress-bar red-bar" style="width: 42%;"></div>
-                        </div>
-                    </div>
-                    <div class="category-item">
-                        <div class="category-header">
-                            <span class="category-name">Refund Requests</span>
-                            <span class="percentage">28%</span>
-                        </div>
-                        <div class="progress-bar-container">
-                            <div class="progress-bar orange-bar" style="width: 28%;"></div>
-                        </div>
-                    </div>
-                    <div class="category-item">
-                        <div class="category-header">
-                            <span class="category-name">Integration Support</span>
-                            <span class="percentage">18%</span>
-                        </div>
-                        <div class="progress-bar-container">
-                            <div class="progress-bar blue-bar" style="width: 18%;"></div>
-                        </div>
-                    </div>
-                    <div class="category-item">
-                        <div class="category-header">
-                            <span class="category-name">Account Management</span>
-                            <span class="percentage">12%</span>
-                        </div>
-                        <div class="progress-bar-container">
-                            <div class="progress-bar green-bar" style="width: 12%;"></div>
+                        <div class="generated-on">
+                            Generated on: Jul 10, 2025
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Support Recommendations Card -->
-            <div class="support-recommendations-card">
-                <div class="card-title">Support Recommendations</div>
-                <ul>
-                    <li>Implement Smart Collect to reduce payment gateway issues by up to 30%</li>
-                    <li>Enable automated refund notifications to improve customer experience</li>
-                    <li>Schedule a technical integration review with our solutions team</li>
-                </ul>
-            </div>
-
-            <!-- Industry Benchmarking Section -->
-            <!-- The next two sections provide a performance comparison against industry averages and top performers.
-            <div class="industry-benchmarking-section">
-                <h3 class="section-heading">Industry Benchmarking</h3>
-                <p class="word-by-word">
-                    <span class="initial-text">Here's how your performance compares to similar merchants in the E-commerce category:</span>
-                </p>
-                <div class="benchmarking-comparison-container">  -->
-                    <!-- Payment Success Rate Card
-                    <div class="benchmarking-chart-card">
-                        <div class="chart-title">Payment Success Rate</div>
-                        <div class="benchmarking-item">
-                            <div class="label-value-row">
-                                <span class="label">Your Business</span>
-                                <span class="value">94.2%</span>
-                            </div>
-                            <div class="progress-bar-container">
-                                <div class="progress-bar green-bar-large" style="width: 94.2%;"></div>
-                            </div>
-                        </div>
-                        <div class="benchmarking-item">
-                            <div class="label-value-row">
-                                <span class="label">Industry Average</span>
-                                <span class="value">91.5%</span>
-                            </div>
-                            <div class="progress-bar-container">
-                                <div class="progress-bar gray-bar" style="width: 91.5%;"></div>
-                            </div>
-                        </div>
-                        <div class="benchmarking-item">
-                            <div class="label-value-row">
-                                <span class="label">Top Performers</span>
-                                <span class="value">96.8%</span>
-                            </div>
-                            <div class="progress-bar-container">
-                                <div class="progress-bar blue-bar-large" style="width: 96.8%;"></div>
-                            </div>
-                        </div>
-                    </div>  -->
-
-                    <!-- Average Transaction Value Card 
-                    <div class="benchmarking-chart-card">
-                        <div class="chart-title">Average Transaction Value (₹)</div>
-                        <div class="benchmarking-item">
-                            <div class="label-value-row">
-                                <span class="label">Your Business</span>
-                                <span class="value">₹435</span>
-                            </div>
-                            <div class="progress-bar-container">
-                                <div class="progress-bar green-bar-large" style="width: calc(435 / 750 * 100%);"></div>
-                            </div>
-                        </div>
-                        <div class="benchmarking-item">
-                            <div class="label-value-row">
-                                <span class="label">Industry Average</span>
-                                <span class="value">₹380</span>
-                            </div>
-                            <div class="progress-bar-container">
-                                <div class="progress-bar gray-bar" style="width: calc(380 / 750 * 100%);"></div>
-                            </div>
-                        </div>
-                        <div class="benchmarking-item">
-                            <div class="label-value-row">
-                                <span class="label">Top Performers</span>
-                                <span class="value">₹750</span>
-                            </div>
-                            <div class="progress-bar-container">
-                                <div class="progress-bar blue-bar-large" style="width: calc(750 / 750 * 100%);"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>  -->
-            <!-- The next section provides key takeaways from the industry benchmarking data. 
-            <div class="benchmarking-insights-card">
-                <div class="card-title">Benchmarking Insights</div>
-                <ul>
-                    <li>Your Zoho CRM activity rate is 6.8% higher than the industry average for similar-sized companies.</li>
-                    <li>Zoho Books automation adoption is 15% higher than comparable businesses</li>
-                    <li>Your Zoho Desk ticket resolution speed ranks in the top 20% within your industry segment.</li>
-                    <li>Opportunity to further improve ROI by expanding usage of Zoho Projects and Campaigns for cross-team collaboration and customer engagement.</li>
-                </ul>
-            </div>
-        </div>
-    </div> -->
-    <!-- END OF SECOND PAGE --> 
-
-    <!-- START OF THIRD PAGE -->
-    <div class="third-page-wrapper">
-        <div class="header-section">
-            <div class="account-name-left">Global Innovations Inc.</div>
-            <div class="qbr-container-right">
-                <div class="qbr-heading">Quarterly Business Review</div>
-                <div class="qbr-subtext">Q2 2025</div>
-            </div>
-        </div>
-        <div class="third-page-content">
-            <h3 class="content-heading">Product Expansion Opportunities</h3>
-            <p class="word-by-word">
-                <span class="initial-text">Based on your business profile and current Zoho usage patterns, we’ve identified the following solutions to enhance efficiency, optimize operations, and accelerate growth</span>
+            <!-- Executive Summary Title Card -->
+            <h2 class="executive-summary-heading">Executive Summary</h2>
+            <p class="executive-summary-content word-by-word">
+                <span class="initial-text">Your organization achieved steady growth this quarter, with a <strong class="text-blue-700">+6.8% increase in transaction volume</strong> and <strong class="text-blue-700">18.2% increase in revenue</strong> compared to Q1 2025. Zoho CRM and Zoho Books remain the top drivers of value, accounting for 72% of total activity. There’s a strong opportunity to expand adoption of Zoho Projects and Zoho Desk to further boost collaboration, service quality, and overall ROI.</span>
             </p>
-            <div class="product-expansion-section">
-                <div class="product-expansion-left-col">
-                    <div class="recommended-products-card">
-                        <div class="card-title">Recommended Products</div>
-                        <div class="product-list">
-                            <div class="product-item">
-                                <div class="icon-container">
-                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
-                                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-13h2v2h-2zm0 4h2v6h-2z"/>
-                                    </svg>
+
+            <!-- Metrics Cards Container -->
+            <div class="metrics-cards-container">
+                <!-- Transaction Amount Card -->
+                <div class="metric-card">
+                    <div class="title">Transaction Amount</div>
+                    <div class="value"> $1.24 M</div>
+                    <div class="change">+16.4% vs Q1</div>
+                </div>
+
+                <!-- Success Rate Card -->
+                <div class="metric-card">
+                    <div class="title">Service Usage(avg) %</div>
+                    <div class="value">40.2%</div>
+                    <div class="change">+1.8% vs Q1</div>
+                </div>
+
+                <!-- Total Subscriptions Card -->
+                <div class="metric-card">
+                    <div class="title">Total Subscriptions</div>
+                    <div class="value">12</div>
+                    <div class="change">+12.7% vs Q1</div>
+                </div>
+            </div>
+
+            <!-- Payment Performance Heading -->
+            <h2 class="payment-performance-heading">Service Usage</h2>
+
+            <!-- Payment Performance Components Container -->
+            <div class="payment-performance-components">
+                <!-- Monthly Transaction Volume Card -->
+                <div class="performance-card">
+                    <div class="card-title">Quarterly Average Usage</div>
+                    <div class="monthly-volume-grid">
+                        <div>
+                            <div class="month">Q1, 2025</div>
+                            <div class="volume">38%</div>
+                        </div>
+                        <div>
+                            <div class="month">Q2, 2025</div>
+                            <div class="volume">45%</div>
+                        </div>
+                        <div>
+                            <div class="month">Q3, 2025</div>
+                            <div class="volume">40%</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Payment Method Distribution Card -->
+                <div class="performance-card">
+                    <div class="card-title">Module Usage Distribution</div>
+                    <div class="payment-methods-list">
+                        <div class="payment-method-item">
+                            <div class="label-percentage-row">
+                                <span class="method-name">Zoho CRM </span>
+                                <span class="percentage">45%</span>
+                            </div>
+                            <div class="progress-bar-container">
+                                <div class="progress-bar green" style="width: 45%;"></div>
+                            </div>
+                        </div>
+                        <div class="payment-method-item">
+                            <div class="label-percentage-row">
+                                <span class="method-name">Zoho Books</span>
+                                <span class="percentage">27%</span>
+                            </div>
+                            <div class="progress-bar-container">
+                                <div class="progress-bar blue" style="width: 27%;"></div>
+                            </div>
+                        </div>
+                        <div class="payment-method-item">
+                            <div class="label-percentage-row">
+                                <span class="method-name">Zoho Projects</span>
+                                <span class="percentage">15%</span>
+                            </div>
+                            <div class="progress-bar-container">
+                                <div class="progress-bar purple" style="width: 15%;"></div>
+                            </div>
+                        </div>
+                        <div class="payment-method-item">
+                            <div class="label-percentage-row">
+                                <span class="method-name">Zoho Desk</span>
+                                <span class="percentage">8%</span>
+                            </div>
+                            <div class="progress-bar-container">
+                                <div class="progress-bar yellow" style="width: 8%;"></div>
+                            </div>
+                        </div>
+                        <div class="payment-method-item">
+                            <div class="label-percentage-row">
+                                <span class="method-name">Other Modules </span>
+                                <span class="percentage">5%</span>
+                            </div>
+                            <div class="progress-bar-container">
+                                <div class="progress-bar red" style="width: 5%;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Key Performance Insights Card -->
+            <div class="key-performance-card">
+                <div class="card-title">Recommended Next Steps for Maximum Benefit</div>
+                <ul>
+                    <li><strong>Expand Access –</strong> Ensure all relevant teams are set up to use the full Zoho suite effectively</li>
+                    <li><strong>Encourage Adoption –</strong> Run short, focused sessions to make Zoho Projects and Desk easy and beneficial for daily work.</li>
+                    <li><strong>Streamline Operations –</strong> Review workflows to eliminate delays and make processes more efficient.</li>
+                    <li><strong>Automate Smartly –</strong> Use Zoho Flow and CRM automation to reduce manual work and free up team time</li>
+                    <li><strong>Track & Recognize Success –</strong> Monitor monthly adoption and highlight teams leading the way</li>
+                </ul>
+            </div>        
+        </div>
+
+        <!-- START OF SECOND PAGE -->
+        <div class="second-page-wrapper">
+            <div class="header-section">
+                <div class="account-name-left">Global Innovations Inc.</div>
+                <div class="qbr-container-right">
+                    <div class="qbr-heading">Quarterly Business Review</div>
+                    <div class="qbr-subtext">Q2 2025</div>
+                </div>
+            </div>
+            <div class="second-page-content">
+                <h3 class="content-heading">Support Health</h3>
+                <div class="support-health-cards-container">
+                    <!-- Total Support Tickets Card -->
+                    <div class="support-health-card">
+                        <div class="title">Total Support Tickets</div>
+                        <div class="value">24</div>
+                        <div class="change negative">-18% vs Q1</div>
+                    </div>
+
+                    <!-- Avg. Resolution Time Card -->
+                    <div class="support-health-card">
+                        <div class="title">Avg. Resolution Time</div>
+                        <div class="value">4.2 hrs</div>
+                        <div class="change negative">-1.8 hrs vs Q1</div>
+                    </div>
+
+                    <!-- CSAT Score Card -->
+                    <div class="support-health-card">
+                        <div class="title">CSAT Score</div>
+                        <div class="value">4.8/5</div>
+                        <div class="change">+0.3 vs Q1</div>
+                    </div>
+                </div>
+
+                <!-- Support Ticket Categories Card -->
+                <div class="support-categories-card">
+                    <div class="card-title">Support Ticket Categories</div>
+                    <div class="categories-list">
+                        <div class="category-item">
+                            <div class="category-header">
+                                <span class="category-name">Payment Gateway Issues</span>
+                                <span class="category-percentage">42%</span>
+                            </div>
+                            <div class="progress-bar-container">
+                                <div class="progress-bar red-bar" style="width: 42%;"></div>
+                            </div>
+                        </div>
+                        <div class="category-item">
+                            <div class="category-header">
+                                <span class="category-name">Refund Requests</span>
+                                <span class="percentage">28%</span>
+                            </div>
+                            <div class="progress-bar-container">
+                                <div class="progress-bar orange-bar" style="width: 28%;"></div>
+                            </div>
+                        </div>
+                        <div class="category-item">
+                            <div class="category-header">
+                                <span class="category-name">Integration Support</span>
+                                <span class="percentage">18%</span>
+                            </div>
+                            <div class="progress-bar-container">
+                                <div class="progress-bar blue-bar" style="width: 18%;"></div>
+                            </div>
+                        </div>
+                        <div class="category-item">
+                            <div class="category-header">
+                                <span class="category-name">Account Management</span>
+                                <span class="percentage">12%</span>
+                            </div>
+                            <div class="progress-bar-container">
+                                <div class="progress-bar green-bar" style="width: 12%;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Support Recommendations Card -->
+                <div class="support-recommendations-card">
+                    <div class="card-title">Support Recommendations</div>
+                    <ul>
+                        <li>Implement Smart Collect to reduce payment gateway issues by up to 30%</li>
+                        <li>Enable automated refund notifications to improve customer experience</li>
+                        <li>Schedule a technical integration review with our solutions team</li>
+                    </ul>
+                </div>
+
+                <!-- Zoho Services Benchmarking Section -->
+                <div class="industry-benchmarking-section">
+                    <h3 class="section-heading">Zoho Service Benchmarking</h3>
+                    <p class="word-by-word">
+                        <span class="initial-text">Here’s how your service usage performance compares with other customers using the same Zoho service you’ve purchased in E-commerce:</span>
+                    </p>
+                    <div class="benchmarking-comparison-container"> 
+                        <!-- Your Usage Card -->
+                        <div class="benchmarking-chart-card">
+                            <div class="chart-title">Your Usage</div>
+                            <div class="benchmarking-item">
+                                <div class="label-value-row">
+                                    <span class="label">Zoho CRM</span>
+                                    <span class="value">38%</span>
                                 </div>
-                                <div class="product-details">
-                                    <div class="product-name">Zoho Books / Zoho Expense</div>
-                                    <div class="product-description">Streamline payouts, vendor payments, and reconciliation with integrated business accounting and expense management.</div>
-                                    <div class="product-metric">Estimated Savings: ₹45,000/year</div>
+                                <div class="progress-bar-container">
+                                    <div class="progress-bar green-bar-large" style="width: 38%;"></div>
                                 </div>
                             </div>
-                            <div class="product-item">
-                                <div class="icon-container">
-                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
-                                        <path d="M19 5H5c-1.11 0-2 .9-2 2v10c0 1.1.89 2 2 2h14c1.11 0 2-.9 2-2V7c0-1.1-.89-2-2-2zm0 12H5V7h14v10zM6 10h2v2H6zm0 3h2v2H6zm3 0h2v2H9zm3 0h2v2h-2zm3 0h2v2h-2z"/>
-                                    </svg>
+                            <div class="benchmarking-item">
+                                <div class="label-value-row">
+                                    <span class="label">Zoho Books</span>
+                                    <span class="value">26%</span>
                                 </div>
-                                <div class="product-details">
-                                    <div class="product-name">Zoho Checkout / Zoho Payments integration</div>
-                                    <div class="product-description">Optimize payment success rates with intelligent routing across multiple payment gateways (via integration partners).</div>
-                                    <div class="product-metric">Potential Success Rate Increase: +2.5%</div>
+                                <div class="progress-bar-container">
+                                    <div class="progress-bar gray-bar" style="width: 26%;"></div>
                                 </div>
                             </div>
-                            <div class="product-item">
-                                <div class="icon-container">
-                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
-                                        <path d="M13 22h-2V11l-3 4-2-2 7-7 7 7-2 2-3-4z"/>
-                                    </svg>
+                            <div class="benchmarking-item">
+                                <div class="label-value-row">
+                                    <span class="label">Zoho Desk</span>
+                                    <span class="value">62%</span>
                                 </div>
-                                <div class="product-details">
-                                    <div class="product-name">Zoho CRM / Zoho Commerce integration</div>
-                                    <div class="product-description">Enhance checkout experience to reduce cart abandonment and boost conversions via integrated CRM and e-commerce solutions.</div>
-                                    <div class="product-metric">Potential Conversion Increase: +15%</div>
+                                <div class="progress-bar-container">
+                                    <div class="progress-bar blue-bar-large" style="width: 62%;"></div>
+                                </div>
+                            </div>
+                        </div> 
+
+                        <!-- Industry Comparison Card -->
+                        <div class="benchmarking-chart-card">
+                            <div class="chart-title">Industry Comparison (Same Services)</div>
+                            <div class="benchmarking-item">
+                                <div class="label-value-row">
+                                    <span class="label">Zoho CRM</span>
+                                    <span class="value">75%</span>
+                                </div>
+                                <div class="progress-bar-container">
+                                    <div class="progress-bar green-bar-large" style="width: 75%;"></div>
+                                </div>
+                            </div>
+                            <div class="benchmarking-item">
+                                <div class="label-value-row">
+                                    <span class="label">Zoho Books</span>
+                                    <span class="value">80%</span>
+                                </div>
+                                <div class="progress-bar-container">
+                                    <div class="progress-bar gray-bar" style="width: 80%;"></div>
+                                </div>
+                            </div>
+                            <div class="benchmarking-item">
+                                <div class="label-value-row">
+                                    <span class="label">Zoho Desk</span>
+                                    <span class="value">77%</span>
+                                </div>
+                                <div class="progress-bar-container">
+                                    <div class="progress-bar blue-bar-large" style="width: 77%;"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>  
+                <!-- Benchmarking Insights Card -->
+                <div class="benchmarking-insights-card">
+                    <div class="card-title">Benchmarking Insights</div>
+                    <ul>
+                        <li>Your Zoho CRM adoption is 3% higher than the industry average.</li>
+                        <li>Zoho Books automation adoption is 15% higher than comparable businesses</li>
+                        <li>Mobile app engagement via Zoho is in the top 15% of your category..</li>
+                        <li>Opportunity to boost efficiency and revenue by leveraging additional Zoho modules.</li>
+                    </ul>
+                </div>
+            </div>
+        </div> 
+        <!-- END OF SECOND PAGE --> 
+
+        <!-- START OF THIRD PAGE -->
+        <div class="third-page-wrapper">
+            <div class="header-section">
+                <div class="account-name-left">Global Innovations Inc.</div>
+                <div class="qbr-container-right">
+                    <div class="qbr-heading">Quarterly Business Review</div>
+                    <div class="qbr-subtext">Q2 2025</div>
+                </div>
+            </div>
+            <div class="third-page-content">
+                <h3 class="content-heading">Product Expansion Opportunities</h3>
+                <p class="word-by-word">
+                    <span class="initial-text">Based on your business profile and current Zoho usage patterns, we’ve identified the following solutions to enhance efficiency, optimize operations, and accelerate growth</span>
+                </p>
+                <div class="product-expansion-section">
+                    <div class="product-expansion-left-col">
+                        <div class="recommended-products-card">
+                            <div class="card-title">Recommended Products</div>
+                            <div class="product-list">
+                                <div class="product-item">
+                                    <div class="icon-container">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+                                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-13h2v2h-2zm0 4h2v6h-2z"/>
+                                        </svg>
+                                    </div>
+                                    <div class="product-details">
+                                        <div class="product-name">Zoho Books / Zoho Expense</div>
+                                        <div class="product-description">Streamline payouts, vendor payments, and reconciliation with integrated business accounting and expense management.</div>
+                                        <div class="product-metric">Estimated Savings: ₹45,000/year</div>
+                                    </div>
+                                </div>
+                                <div class="product-item">
+                                    <div class="icon-container">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+                                            <path d="M19 5H5c-1.11 0-2 .9-2 2v10c0 1.1.89 2 2 2h14c1.11 0 2-.9 2-2V7c0-1.1-.89-2-2-2zm0 12H5V7h14v10zM6 10h2v2H6zm0 3h2v2H6zm3 0h2v2H9zm3 0h2v2h-2zm3 0h2v2h-2z"/>
+                                        </svg>
+                                    </div>
+                                    <div class="product-details">
+                                        <div class="product-name">Zoho Checkout / Zoho Payments integration</div>
+                                        <div class="product-description">Optimize payment success rates with intelligent routing across multiple payment gateways (via integration partners).</div>
+                                        <div class="product-metric">Potential Success Rate Increase: +2.5%</div>
+                                    </div>
+                                </div>
+                                <div class="product-item">
+                                    <div class="icon-container">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+                                            <path d="M13 22h-2V11l-3 4-2-2 7-7 7 7-2 2-3-4z"/>
+                                        </svg>
+                                    </div>
+                                    <div class="product-details">
+                                        <div class="product-name">Zoho CRM / Zoho Commerce integration</div>
+                                        <div class="product-description">Enhance checkout experience to reduce cart abandonment and boost conversions via integrated CRM and e-commerce solutions.</div>
+                                        <div class="product-metric">Potential Conversion Increase: +15%</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-expansion-right-col">
+                        <div class="cross-sell-opportunities-card">
+                            <div class="card-title">Cross-Sell Opportunities</div>
+                            <div class="product-list">
+                                <div class="product-item">
+                                    <div class="icon-container">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+                                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-2-12h4v2h-4zm0 3h4v2h-4zm0 3h4v2h-4z"/>
+                                        </svg>
+                                    </div>
+                                    <div class="product-details">
+                                        <div class="product-name">Zoho Finance Integrations (for EMI, BNPL partners)</div>
+                                        <div class="product-description">Increase average order value with EMI and Buy Now Pay Later options through seamless integration with partner solutions.</div>
+                                        <div class="product-metric">Potential AOV Increase: +24%</div>
+                                    </div>
+                                </div>
+                                <div class="product-item">
+                                    <div class="icon-container">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+                                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-4-4h8v2H8zm0-3h8v2H8zm0-3h8v2H8z"/>
+                                        </svg>
+                                    </div>
+                                    <div class="product-details">
+                                        <div class="product-name">Zoho Subscriptions / Zoho Billing</div>
+                                        <div class="product-description">Enable subscription-based revenue streams with automated recurring billing and subscription management.</div>
+                                        <div class="product-metric">Potential Revenue Increase: +18%</div>
+                                    </div>
+                                </div>
+                                <div class="product-item">
+                                    <div class="icon-container">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+                                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-11h2v2h-2zm0 3h2v2h-2zm0 3h2v2h-2z"/>
+                                        </svg>
+                                    </div>
+                                    <div class="product-details">
+                                        <div class="product-name">Zoho Books / Zoho Inventory (for Capital insights)</div>
+                                        <div class="product-description">Leverage your financial and inventory data from Zoho Books and Zoho Inventory to manage capital more effectively.</div>
+                                        <div class="product-metric">Eligible Amount: Up to ₹25 Lakhs</div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="product-expansion-right-col">
-                    <div class="cross-sell-opportunities-card">
-                        <div class="card-title">Cross-Sell Opportunities</div>
-                        <div class="product-list">
-                            <div class="product-item">
-                                <div class="icon-container">
-                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
-                                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-2-12h4v2h-4zm0 3h4v2h-4zm0 3h4v2h-4z"/>
-                                    </svg>
-                                </div>
-                                <div class="product-details">
-                                    <div class="product-name">Zoho Finance Integrations (for EMI, BNPL partners)</div>
-                                    <div class="product-description">Increase average order value with EMI and Buy Now Pay Later options through seamless integration with partner solutions.</div>
-                                    <div class="product-metric">Potential AOV Increase: +24%</div>
-                                </div>
-                            </div>
-                            <div class="product-item">
-                                <div class="icon-container">
-                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
-                                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-4-4h8v2H8zm0-3h8v2H8zm0-3h8v2H8z"/>
-                                    </svg>
-                                </div>
-                                <div class="product-details">
-                                    <div class="product-name">Zoho Subscriptions / Zoho Billing</div>
-                                    <div class="product-description">Enable subscription-based revenue streams with automated recurring billing and subscription management.</div>
-                                    <div class="product-metric">Potential Revenue Increase: +18%</div>
-                                </div>
-                            </div>
-                            <div class="product-item">
-                                <div class="icon-container">
-                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
-                                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-11h2v2h-2zm0 3h2v2h-2zm0 3h2v2h-2z"/>
-                                    </svg>
-                                </div>
-                                <div class="product-details">
-                                    <div class="product-name">Zoho Books / Zoho Inventory (for Capital insights)</div>
-                                    <div class="product-description">Leverage your financial and inventory data from Zoho Books and Zoho Inventory to manage capital more effectively.</div>
-                                    <div class="product-metric">Eligible Amount: Up to ₹25 Lakhs</div>
-                                </div>
-                            </div>
+                <!-- Projected ROI from Product Expansion Section -->
+                <div class="projected-roi-section">
+                    <div class="section-title">Projected ROI from Product Expansion</div>
+                    <div class="roi-metrics-container">
+                        <div class="roi-metric-item">
+                            <div class="label">Revenue Growth</div>
+                            <div class="value">+22%</div>
+                        </div>
+                        <div class="roi-metric-item">
+                            <div class="label">Cost Savings</div>
+                            <div class="value">₹1.2L/yr</div>
+                        </div>
+                        <div class="roi-metric-item">
+                            <div class="label">Conversion Rate</div>
+                            <div class="value">+15%</div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <!-- Projected ROI from Product Expansion Section -->
-            <div class="projected-roi-section">
-                <div class="section-title">Projected ROI from Product Expansion</div>
-                <div class="roi-metrics-container">
-                    <div class="roi-metric-item">
-                        <div class="label">Revenue Growth</div>
-                        <div class="value">+22%</div>
-                    </div>
-                    <div class="roi-metric-item">
-                        <div class="label">Cost Savings</div>
-                        <div class="value">₹1.2L/yr</div>
-                    </div>
-                    <div class="roi-metric-item">
-                        <div class="label">Conversion Rate</div>
-                        <div class="value">+15%</div>
-                    </div>
+                <div class="next-steps-section">
+                    <div class="section-title">Next Steps</div>
+                    <ol>
+                        <li>Schedule a demo of Zoho Books / Zoho Expense (July 15-20)</li>
+                        <li>Implement Zoho CRM / Zoho Commerce integration to reduce cart abandonment (August)</li>
+                        <li>Enable Zoho Finance Integrations (for EMI, BNPL partners) to increase average order value (September)</li>
+                        <li>Technical review to optimize payment success rate (July 25)</li>
+                    </ol>
                 </div>
-            </div>
-            <div class="next-steps-section">
-                <div class="section-title">Next Steps</div>
-                <ol>
-                    <li>Schedule a demo of Zoho Books / Zoho Expense (July 15-20)</li>
-                    <li>Implement Zoho CRM / Zoho Commerce integration to reduce cart abandonment (August)</li>
-                    <li>Enable Zoho Finance Integrations (for EMI, BNPL partners) to increase average order value (September)</li>
-                    <li>Technical review to optimize payment success rate (July 25)</li>
-                </ol>
-            </div>
-            <div class="zoho-support-team-section">
-                <div class="section-title">Your Zoho Support Team</div>
-                <div class="contact-details">
-                    <div class="icon-container">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
-                            <path fill-rule="evenodd" d="M7.5 6a4.5 4.5 0 119 0 4.5 4.5 0 01-9 0zM3.751 20.105a8.25 8.25 0 0116.498 0 .75.75 0 01-.437.695A18.683 18.683 0 0112 22.5c-2.786 0-5.433-.608-7.812-1.7a.75.75 0 01-.437-.695z" clip-rule="evenodd" />
-                        </svg>
+                <div class="zoho-support-team-section">
+                    <div class="section-title">Your Zoho Support Team</div>
+                    <div class="contact-details">
+                        <div class="icon-container">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+                                <path fill-rule="evenodd" d="M7.5 6a4.5 4.5 0 119 0 4.5 4.5 0 01-9 0zM3.751 20.105a8.25 8.25 0 0116.498 0 .75.75 0 01-.437.695A18.683 18.683 0 0112 22.5c-2.786 0-5.433-.608-7.812-1.7a.75.75 0 01-.437-.695z" clip-rule="evenodd" />
+                            </svg>
+                        </div>
+                        <div class="contact-info">
+                            <div class="name">Mohammed Foumin</div>
+                            <div class="role">Account Manager</div>
+                            <a href="mailto:foumin.a@zohocorp.com" class="email">foumin.a@zohocorp.com</a>
+                        </div>
                     </div>
-                    <div class="contact-info">
-                        <div class="name">Mohammed Foumin</div>
-                        <div class="role">Account Manager</div>
-                        <a href="mailto:foumin.a@zohocorp.com" class="email">foumin.a@zohocorp.com</a>
+                    <div class="action-items">
+                        <a href="#" class="schedule-button">Schedule Follow-up Call</a>
+                        <div class="support-number">Support: 1800 572 3535</div>
                     </div>
-                </div>
-                <div class="action-items">
-                    <a href="#" class="schedule-button">Schedule Follow-up Call</a>
-                    <div class="support-number">Support: 1800 572 3535</div>
                 </div>
             </div>
         </div>
