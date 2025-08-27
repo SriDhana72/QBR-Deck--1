@@ -65,9 +65,7 @@
                 filename: 'Global_Innovations_QBR_Q2_2025.pdf',
                 image: { type: 'jpeg', quality: 0.98 },
                 html2canvas: { scale: 2, useCORS: true, letterRendering: true },
-                jsPDF: { unit: 'in', format: 'a4', orientation: 'portrait' },
-                // This is key for creating proper page breaks between your sections
-                pagebreak: { mode: 'css', before: ['.second-page-wrapper', '.third-page-wrapper'] }
+                jsPDF: { unit: 'in', format: 'a4', orientation: 'portrait' }
             };
 
             // Use html2pdf to generate the PDF

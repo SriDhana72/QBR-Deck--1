@@ -8,8 +8,8 @@ body {
 }
 
 /* Main wrapper for the newsletter style content */
-.main-page-wrapper, .second-page-wrapper, .third-page-wrapper { /* Apply to all page wrappers */
-    max-width: 800px; /* Reduced overall width */
+.page-wrapper {
+    max-width: 950px; /* Reduced overall width */
     margin: 1.5rem auto; /* Center the content on the page with vertical margin */
     padding: 1.8rem; /* Reduced padding inside the main wrapper */
     background-color: #ffffff; /* White background for the main content area */
@@ -17,6 +17,29 @@ body {
     box-shadow: 0 3px 20px rgba(0, 0, 0, 0.07); /* Slightly softer shadow */
     position: relative; /* Needed for positioning the print button relative to this container */
 }
+
+/* --- Page Break CSS (Crucial for PDF generation) --- */
+@media print {
+    .page-break {
+        page-break-after: always;
+    }
+    /* Prevents main content blocks from being split across pages */
+    .metrics-cards-container,
+    .payment-performance-components,
+    .key-performance-card,
+    .support-health-cards-container,
+    .support-categories-card,
+    .support-recommendations-card,
+    .industry-benchmarking-section,
+    .benchmarking-insights-card,
+    .product-expansion-section,
+    .projected-roi-section,
+    .next-steps-section,
+    .zoho-support-team-section {
+        page-break-inside: avoid;
+    }
+}
+/* --- End of Page Break CSS --- */
 
 /* Header section containing company name and QBR details */
 .header-section {
@@ -340,17 +363,6 @@ body {
     font-size: 0.85rem; /* Reduced font size */
     line-height: 1.2; /* Reduced line height */
     margin-bottom: 0.15rem; /* Reduced margin */
-}
-/* Styling for the second page content */
-.second-page-content, .third-page-content {
-    margin-top: 3rem; /* Reduced margin */
-}
-
-.second-page-content .content-heading, .third-page-content .content-heading {
-    font-size: 1.3rem; /* Reduced font size */
-    font-weight: 600;
-    color: #1a237e;
-    margin-bottom: 0.8rem; /* Reduced margin */
 }
 /* Styles for the new support health cards */
 .support-health-cards-container {
@@ -974,8 +986,8 @@ body {
     /* This class is used by the script to hide the button during PDF generation */
 }
 .print-button-container {
-    display: flex;
-    justify-content: center;
-    margin-top: 1.5rem;
-    margin-bottom: 1.5rem;
+    position: absolute;
+    top: 1.5rem;
+    right: 1.8rem;
+    z-index: 10;
 }

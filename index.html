@@ -14,17 +14,16 @@
 <body>
     <!-- Main content container that will be targeted for PDF generation -->
     <div id="content-to-print">
-        <!-- Download as PDF Button Container at the top -->
+        <!-- Download as PDF Button Container at the top right -->
         <div class="print-button-container">
-            <button id="download-button" onclick="downloadPDF()" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-5 rounded-full shadow-lg flex items-center transition duration-300 ease-in-out transform hover:scale-105">
+            <button onclick="downloadPDF()" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-5 rounded-full shadow-lg flex items-center transition duration-300 ease-in-out transform hover:scale-105">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path>
                 </svg>
-                Download as PDF
             </button>
         </div>
-
-        <div class="main-page-wrapper">
+        
+        <div class="page-wrapper">
             <div class="header-section">
                 <!-- Account Name (Left Top) -->
                 <div class="account-name-left">Global Innovations Inc.</div>
@@ -174,11 +173,13 @@
                     <li><strong>Automate Smartly –</strong> Use Zoho Flow and CRM automation to reduce manual work and free up team time</li>
                     <li><strong>Track & Recognize Success –</strong> Monitor monthly adoption and highlight teams leading the way</li>
                 </ul>
-            </div>        
+            </div>
+            <!-- Add a page break after the first page content -->
+            <div class="page-break"></div>
         </div>
 
         <!-- START OF SECOND PAGE -->
-        <div class="second-page-wrapper">
+        <div class="page-wrapper">
             <div class="header-section">
                 <div class="account-name-left">Global Innovations Inc.</div>
                 <div class="qbr-container-right">
@@ -186,8 +187,8 @@
                     <div class="qbr-subtext">Q2 2025</div>
                 </div>
             </div>
-            <div class="second-page-content">
-                <h3 class="content-heading">Support Health</h3>
+            <div>
+                <h3 class="executive-summary-heading">Support Health</h3>
                 <div class="support-health-cards-container">
                     <!-- Total Support Tickets Card -->
                     <div class="support-health-card">
@@ -347,11 +348,13 @@
                     </ul>
                 </div>
             </div>
+             <!-- Add a page break after the second page content -->
+            <div class="page-break"></div>
         </div> 
         <!-- END OF SECOND PAGE --> 
 
         <!-- START OF THIRD PAGE -->
-        <div class="third-page-wrapper">
+        <div class="page-wrapper">
             <div class="header-section">
                 <div class="account-name-left">Global Innovations Inc.</div>
                 <div class="qbr-container-right">
@@ -359,8 +362,8 @@
                     <div class="qbr-subtext">Q2 2025</div>
                 </div>
             </div>
-            <div class="third-page-content">
-                <h3 class="content-heading">Product Expansion Opportunities</h3>
+            <div>
+                <h3 class="executive-summary-heading">Product Expansion Opportunities</h3>
                 <p class="word-by-word">
                     <span class="initial-text">Based on your business profile and current Zoho usage patterns, we’ve identified the following solutions to enhance efficiency, optimize operations, and accelerate growth</span>
                 </p>
@@ -501,8 +504,9 @@
             </div>
         </div>
     </div>
-    <!-- END OF THIRD PAGE -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
 
+    <!-- END OF THIRD PAGE -->
     <!-- Link to your custom JavaScript file -->
     <script src="script2.js"></script>
 </body>
